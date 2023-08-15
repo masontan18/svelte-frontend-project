@@ -42,7 +42,7 @@
 </script>
 <Nav />
 <img alt="bg-img" src={bgImg} class="bg-img"/>
-<h1 class="text-center text-2xl font-bold underline">Showing {data.jobs.length} available {position}</h1>
+<h1 class="text-center text-2xl font-bold italic">Showing {data.jobs.length} available {position}</h1>
 
 {#if data.jobs.length === 0 }
 <div class="owl-container">
@@ -101,7 +101,8 @@
 <Footer />
 <style>
 	h1 {
-		margin-top: 320px;
+		margin-top: 280px;
+		font-size: 27px;
 	}
 
 	.owl-container {
