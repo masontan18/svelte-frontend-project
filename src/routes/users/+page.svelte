@@ -38,7 +38,8 @@
 				);
 				if (resp.ok) {
 					alert('Delete successfully');
-					isLogin.set(!logOut());
+					logOut();
+					isLogin.set(false);
 					goto('/');
 				}
 			} catch (err) {
