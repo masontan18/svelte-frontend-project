@@ -71,9 +71,13 @@ PROJECT EXPLANATION:
 7. loading spin after button clicked
 8. Reloading page will not log out the user
 
-TO ENHANCE:
-1. Update user password via PATCH API request (UI and logic done but backend part haven't done the update user endpoint)
-2. Delete user account via DELETE API request (UI and loginc done but backend part haven't done the delete user endpoint)
+FRONTEND & BACNKEND
+(Assume backend already deployed, got valid backend URL but frontend part haven't started. Start now)
+1. When builing frontend in VS Code, use DOCKER to run the fake (local host) backend and use this (fake) local host backend URL in .env. Use npm run dev -- --open to see the user interface (Both backend and frontend are local hosts as this is development environment)
+
+2. When frontend done, push to GitHub. Login Cloudflare and locate this repo to create the page
+
+2. When deploying this in Cloudflare, use back the valid backend URL. use deployed URL generated from Cloudflare to see the user interface
 
 
 
