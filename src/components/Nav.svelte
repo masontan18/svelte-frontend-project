@@ -22,7 +22,8 @@
 
 		<div class="flex-none pr-6 right-container">
 			<select data-choose-theme class="select select-accent select-sm">
-				<option value="light">Light</option>
+				<option value="winter">Winter</option>
+				<option value="cupcake">Cupcake</option>
 				<option value="dark">Dark</option>
 			</select>
 			<a class="btn btn-outline btn-accent flex-none" href="/jobs/new">Post a Job</a>
@@ -45,7 +46,8 @@
 
 		<div class="flex-none pr-6">
 			<select data-choose-theme class="select select-accent select-sm">
-				<option value="">Light</option>
+				<option value="winter">Winter</option>
+				<option value="cupcake">Cupcake</option>
 				<option value="dark">Dark</option>
 			</select>
 			<a class="btn btn-outline btn-accent flex-none" href="/signUp">Post a Job</a>

@@ -22,6 +22,7 @@
 	import logo4 from "$lib/images/shell.png"
 	import logo5 from "$lib/images/digi.png"
 	import logo6 from "$lib/images/mcd.jpeg"
+	import bgImg from "../lib/images/bg-img.webp"
 
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
 	onMount(async () => {
@@ -38,9 +39,9 @@
 	} else {
 		position = "positions"
 	}
-
 </script>
 <Nav />
+<img alt="bg-img" src={bgImg} class="bg-img"/>
 <h1 class="text-center text-2xl font-bold underline">Showing {data.jobs.length} available {position}</h1>
 
 {#if data.jobs.length === 0 }
@@ -100,7 +101,7 @@
 <Footer />
 <style>
 	h1 {
-		margin-top: 100px;
+		margin-top: 320px;
 	}
 
 	.owl-container {
@@ -125,6 +126,15 @@
 		margin-top: 20px;
 		width: 8%;
 		border-radius: 50%;
+	}
+
+	.bg-img {
+		width: 100%;
+		height: 215px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 40px
 	}
 </style>
 
