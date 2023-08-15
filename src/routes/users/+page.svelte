@@ -12,6 +12,8 @@
 	import { getUserId } from '../../utils/auth.js';
 	import { getTokenFromLocalStorage } from '../../utils/auth.js';
 	import { logOut } from '../../utils/auth';
+	import { goto } from '$app/navigation';
+
 
 	onMount(async () => {
 		themeChange(false);
@@ -20,7 +22,8 @@
 	});
 
 	const postDelete = () => {
-		isLogin(!(logOut()))
+		isLogin.set(!logOut())
+		goto("/")		
 	}
 
 	const accountDeleteHandler = async () => {
