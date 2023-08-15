@@ -40,7 +40,9 @@
 					alert('Delete successfully');
 					logOut();
 					isLogin.set(false);
+					console.log(1)
 					goto('/');
+					console.log(2)
 				}
 			} catch (err) {
 				alert(err);
