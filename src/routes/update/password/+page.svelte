@@ -4,11 +4,12 @@
 	import '../../../tailwind.css';
 	import { themeChange } from 'theme-change';
 	import { onMount } from 'svelte';
-	import { isLoggedIn } from '../../../utils/auth';
+	import { isLoggedIn, logOut } from '../../../utils/auth';
 	import { isLogin } from '../../../utils/stores.js';
 	import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
 	import { getUserId } from '../../../utils/auth';
 	import { getTokenFromLocalStorage } from '../../../utils/auth';
+	import { goto } from '$app/navigation';
 
 	onMount(async () => {
 		themeChange(false);
@@ -29,12 +30,12 @@
 		}
 
 		try {
-			console.log("Updating password ...")
 			const userData = {
+				oldPassword: event.target["old-password"].value,
 				password: event.target['new-password'].value,
-				passwordConfirm: event.target['confirm-new-password'].value
+				passwordConfirm: event.target['confirm-new-password'].value,
+
 			};
-            console.log(userData)
 			const resp = await fetch(
 				PUBLIC_BACKEND_BASE_URL + "/api/collections/users/records/" + getUserId(),
 				{
@@ -50,15 +51,36 @@
 			if (resp.ok) {
 				isLoading = false
 				alert('Password Updated Successfully');
+				logOut();
+				goto("/login")
 			} else {
 				isLoading = false
-				alert('Failed');
+				alert('Old Password is invalid, please try again.');
 			}
 		} catch (error) {
 			isLoading = false
 			alert(error);
 		}
 	};
+
+	let enteredOldPassword = ""
+	let oldPasswordIsValid = false
+	let oldPasswordIsTouched = false
+	$: oldPasswordHasError = !oldPasswordIsValid && oldPasswordIsTouched
+	const oldPasswordChangeHandler = (event) => {
+		enteredOldPassword = event.target.value
+		if (enteredOldPassword.length >= 8) {
+			oldPasswordIsValid = true
+		} else {
+			oldPasswordIsValid = false
+		}
+	}
+	const oldPasswordBlurHandler = (event) => {
+		oldPasswordIsTouched = true
+		if (enteredoldPassword.length < 8) {
+			oldPasswordIsValid = false
+		}
+	}
 
 	let enteredPassword = ""
 	let passwordIsValid = false
@@ -112,6 +134,15 @@
 
 <div class="flex flex-row justify-center items-center big-container">
 	<form class="w-1/3" on:submit={submitHandler}>
+		<div class="form-control w-full">
+			<label for="old-password" class="label">Old Password:</label>
+			<input type="password" name="old-password" class="input w-full input-bordered" on:input={oldPasswordChangeHandler} on:blur={oldPasswordBlurHandler} />
+			{#if oldPasswordHasError}
+			<label class="label" for="old-password">
+				<span class="label-text-alt text-red-500">Password must be at least 8 characters.</span>
+			</label>
+			{/if}
+		</div>
 		<div class="form-control w-full">
 			<label for="new-password" class="label">New Password:</label>
 			<input type="password" name="new-password" class="input w-full input-bordered" on:input={passwordChangeHandler} on:blur={passwordBlurHandler} />
