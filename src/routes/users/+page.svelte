@@ -24,7 +24,6 @@
 		let value = confirm('Confirm to delete account?'); // will return boolean value
 		if (value) {
 			try {
-				console.log('Deleting account ...');
 				const resp = await fetch(
 					PUBLIC_BACKEND_BASE_URL + '/api/collections/users/records/' + getUserId(),
 					{
