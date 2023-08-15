@@ -14,23 +14,17 @@
 	import { logOut } from '../../utils/auth';
 	import { goto } from '$app/navigation';
 
-
 	onMount(async () => {
 		themeChange(false);
 		// 👆 false parameter is required for svelte
 		isLogin.set(await isLoggedIn());
 	});
 
-	const postDelete = () => {
-		isLogin.set(!logOut())
-		goto("/")		
-	}
-
 	const accountDeleteHandler = async () => {
 		let value = confirm('Confirm to delete account?'); // will return boolean value
 		if (value) {
 			try {
-				console.log("Deleting account ...")
+				console.log('Deleting account ...');
 				const resp = await fetch(
 					PUBLIC_BACKEND_BASE_URL + '/api/collections/users/records/' + getUserId(),
 					{
@@ -43,8 +37,9 @@
 					}
 				);
 				if (resp.ok) {
-					alert("Delete successfully")
-					postDelete();
+					alert('Delete successfully');
+					isLogin.set(!logOut());
+					goto('/');
 				}
 			} catch (err) {
 				alert(err);
