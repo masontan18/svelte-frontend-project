@@ -91,6 +91,8 @@ FRONTEND & BACNKEND
     1.4 Go to http://localhost:8080/_/ in your browser
         Log in with credentials set up in backend part previously. Now the fake backend base URL is set up! Rmb to keep Docker running in order to access to the fake backend BASE URL
 
+    1.5 Can use apps "Insomia" to check API endpoint
+
 2. When frontend done, push to GitHub. Login Cloudflare and locate this repo to create the page
 
 2. When deploying this in Cloudflare, use back the valid backend URL. use deployed URL generated from Cloudflare to see the user interface

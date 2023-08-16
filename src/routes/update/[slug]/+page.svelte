@@ -1,5 +1,4 @@
 <script>
-	import Nav from '../../../components/Nav.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import '../../../tailwind.css';
 	import { themeChange } from 'theme-change';
@@ -187,8 +186,6 @@
 		formIsValid = false;
 	}
 </script>
-
-<Nav />
 
 <div class="flex flex-row justify-end align-bottom delete-button-container">
 	<button class="btn btn-md btn-outline btn-error" on:click={deleteHandler}>Delete</button>

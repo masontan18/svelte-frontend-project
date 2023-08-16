@@ -6,7 +6,6 @@
 	import { themeChange } from 'theme-change';
 	import { isLoggedIn } from '../../../utils/auth.js';
 	import "../../../tailwind.css"
-	import Nav from '../../../components/Nav.svelte';
 	import Footer from '../../../components/Footer.svelte';
 
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
@@ -21,7 +20,6 @@
 	import { isLogin } from '../../../utils/stores.js';
 
 </script>
-<Nav />
 
 <div class="mt-10 adjust-for-fixed">
 	<div class="flex">

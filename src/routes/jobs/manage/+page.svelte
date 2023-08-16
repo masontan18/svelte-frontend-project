@@ -1,6 +1,5 @@
 <script>
 	export let data;
-	import Nav from '../../../components/Nav.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import '../../../tailwind.css';
 	import { themeChange } from 'theme-change';
@@ -16,8 +15,6 @@
 		isLogin.set(await isLoggedIn());
 	});
 </script>
-
-<Nav />
 <h1>Edit Your Job Posting</h1>
 {#if data.jobs.length == 0}
 	<div>

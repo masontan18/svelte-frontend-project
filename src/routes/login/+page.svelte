@@ -6,7 +6,6 @@
 	import '../../tailwind.css';
 	import { goto } from '$app/navigation';
 	import { authenticateUser } from '../../utils/auth.js';
-	import Nav from '../../components/Nav.svelte';
 	import Footer from '../../components/Footer.svelte';
 
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
@@ -92,9 +91,6 @@
 	}
 
 </script>
-
-<Nav />
-
 <div class="flex justify-center items-center mt-8 adjust-for-fixed">
 	<form class="w-1/3" on:submit={submitHandler}>
 		<div class="form-control w-full">

@@ -2,7 +2,6 @@
 	import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
 	import { isLogin } from '../../utils/stores.js';
 	import '../../tailwind.css';
-	import Nav from '../../components/Nav.svelte';
 	import Footer from '../../components/Footer.svelte';
 
 	//third party library: theme-change
@@ -158,8 +157,6 @@
 		formIsValid = false;
 	}
 </script>
-
-<Nav />
 
 <h1 class="text-center text-2xl">Create an Account to Post a Job</h1>
 <div class="text-center">

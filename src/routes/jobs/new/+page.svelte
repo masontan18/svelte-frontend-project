@@ -5,7 +5,6 @@
 	import { themeChange } from 'theme-change';
 	import { isLoggedIn } from '../../../utils/auth.js';
 	import '../../../tailwind.css';
-	import Nav from '../../../components/Nav.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import { PUBLIC_BACKEND_BASE_URL } from '$env/static/public';
 	import { getUserId } from '../../../utils/auth.js';
@@ -223,8 +222,6 @@
 		formIsValid = false;
 	}
 </script>
-
-<Nav />
 <div class="adjust-for-fixed container mx-auto px-2 lg:px-0">
 	<form class="text-xl" on:submit={submitHandler}>
 		<div class="form-control w-full form-input-div">

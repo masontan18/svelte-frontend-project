@@ -1,5 +1,4 @@
 <script>
-	import Nav from '../../components/Nav.svelte';
 	import Footer from '../../components/Footer.svelte';
 	import '../../tailwind.css';
 	import { themeChange } from 'theme-change';
@@ -47,8 +46,6 @@
 		}
 	};
 </script>
-
-<Nav />
 
 <div class="lock-container">
 	<img alt="cry-logo" src={lockLogo} class="cry-logo" />

@@ -11,7 +11,6 @@
 	import { isLogin } from '../utils/stores.js';
 
 	import { isLoggedIn } from '../utils/auth.js';
-	import Nav from '../components/Nav.svelte';
 	import Footer from "../components/Footer.svelte"
 	import jobLogo from "$lib/images/job-logo.png"
 	import smallJobLogo from "$lib/images/small-job-logo.png"
@@ -40,7 +39,6 @@
 		position = "positions"
 	}
 </script>
-<Nav />
 <img alt="bg-img" src={bgImg} class="bg-img"/>
 <h1 class="text-center text-2xl font-bold italic">Showing {data.jobs.length} available {position}</h1>
 

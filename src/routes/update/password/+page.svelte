@@ -1,5 +1,4 @@
 <script>
-	import Nav from '../../../components/Nav.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import '../../../tailwind.css';
 	import { themeChange } from 'theme-change';
@@ -127,8 +126,6 @@
 		formIsValid = false
 	}
 </script>
-
-<Nav />
 
 <h1 class="text-center">Change Your Password</h1>
 
