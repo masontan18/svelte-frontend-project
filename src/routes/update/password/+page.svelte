@@ -77,7 +77,7 @@
 	}
 	const oldPasswordBlurHandler = (event) => {
 		oldPasswordIsTouched = true
-		if (enteredoldPassword.length < 8) {
+		if (enteredOldPassword.length < 8) {
 			oldPasswordIsValid = false
 		}
 	}
