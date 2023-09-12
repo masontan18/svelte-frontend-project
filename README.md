@@ -6,6 +6,6 @@ As bootcamp candidates are sharing the same backend, the deployed frontend: http
 
 - testing CRUD API via Insomnia
 - build UI UX
-- user able to sign up, sign in, check details of all job posted, update password, delete account, post new job, edit details of posted job, delete posted job
+- user able to sign up, sign in, update password, delete account, check details of all job posted, post new job, edit details of posted job, delete posted job
 - deployed via cloudflare
 
